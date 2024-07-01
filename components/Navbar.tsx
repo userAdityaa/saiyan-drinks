@@ -1,25 +1,40 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
-import { Roboto_Condensed } from 'next/font/google'
 import { Oswald } from 'next/font/google'
-import { NavbarProps } from '@/types/NavbarTypes'
+import styled from 'styled-components';
+import { useGlobalContext } from '@/context/themeContext';
 
 
 const oswald = Oswald({subsets: ['latin'], weight: ['400', '200', '300', '500']})
 
-const Navbar = ({theme}: NavbarProps) => {
+const Navbar = () => {
+
+    const {theme, setTheme} = useGlobalContext();
 
     let mainthemeStyles;
     let svgFillColor;
+
 
     if(theme === 'orange') { 
         mainthemeStyles = 'text-[#ff9014]' 
         svgFillColor = 'fill-[#ff9014]'
     }
+    else if(theme == 'lime') { 
+        mainthemeStyles = 'text-[#69ac0b]'
+        svgFillColor = 'fill-[#69ac0b]'
+    }
+    else if(theme == 'dragonfruit') { 
+        mainthemeStyles = 'text-[#ff21ce]'
+        svgFillColor = 'fill-[#ff21ce]'
+    }
 
 
   return (
-    <nav className={`fixed border rounded-full  w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white`}>
+    
+    <nav className={`fixed border rounded-full  w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white z-10`}>
+
+        
 
     
         <div className='flex items-center mr-[12vw]'>
