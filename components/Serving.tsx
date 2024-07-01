@@ -11,20 +11,38 @@ const Serving = () => {
 
     const {theme, setTheme} = useGlobalContext();
 
-    let background, textSvg, boardColor, textColor, borderColor, svgColor;
+    let background, textSvg, boardColor, textColor, borderColor, svgColor, content;
 
-    if(theme == 'orange') { 
-        background ='bg-[#ffb15a]';
+    if(theme === 'orange') { 
+        background ='bg-[#ffc98d]';
         textSvg= '/orangeTag.svg';
         boardColor ='bg-[#ff8c00]';
         textColor = 'text-[#ff8c00]';
         borderColor = 'border-[3px] border-[#ff8c00]';
         svgColor = 'fill-[#ff8c00]';
+        content = '/peachContent.png'
+    }
+    else if(theme === 'lime') { 
+        background = 'bg-[#cdfe8c]';
+        textSvg = '/limeTag.svg';
+        boardColor = 'bg-[#69ac0b]';
+        textColor = 'text-[#69ac0b]';
+        borderColor = 'border-[3px] border-[#69ac0b]';
+        svgColor = 'fill-[#69ac0b]';
+        content = '/limeContent.png';
+    } else if(theme === 'dragonfruit') {
+        background = 'bg-[#ffb5ef]';
+        textSvg = '/dragonTag.svg';
+        boardColor = 'bg-[#ff21ce]';
+        textColor = 'text-[#ff21ce]';
+        borderColor = 'border-[3px] border-[#ff21ce]';
+        svgColor = 'fill-[#ff21ce]';
+        content = '/dragonContent.png';
     }
 
   return (
     <div className={`h-[100vh] w-[100vw] ${background} flex ${oswald.className}`}>
-        <div className='flex w-[90%] mx-auto h-[100%]'>
+        <div className='flex w-[92%] mx-auto h-[100%]'>
             <div className='w-[50%]'>
 
 
@@ -68,6 +86,10 @@ const Serving = () => {
                 </div>
 
 
+            </div>
+
+            <div className='w-[50%] flex items-center justify-center ml-[4rem]'>
+                <Image src={`${content}`} alt='content' height={400} width={650}></Image>
             </div>
         </div>
     </div>
