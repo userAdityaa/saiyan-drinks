@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     
-    <nav className={`fixed border rounded-full  w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white z-20`}>
+    <nav className={`fixed border rounded-full  w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white z-50`}>
 
         
 

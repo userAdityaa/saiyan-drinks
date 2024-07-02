@@ -1,4 +1,4 @@
-import { Hero, Serving, Shaking } from "@/components";
+import { Comparison, Hero, Serving, Shaking } from "@/components";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <Hero/>
       <Serving/>
       <Shaking/>
+      <Comparison/>
 
       
     </main>
