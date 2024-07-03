@@ -6,6 +6,7 @@ import Comparison from "./Comparison";
 import Review from "./Review";
 import Press from "./Press";
 import Menu from "./Menu";
+import Questions from "./Questions";
 
 export { 
     Navbar, 
@@ -16,4 +17,5 @@ export {
     Review,
     Press,
     Menu, 
+    Questions
 }
