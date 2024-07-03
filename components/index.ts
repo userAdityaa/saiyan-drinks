@@ -4,6 +4,7 @@ import Serving from "./Serving";
 import Shaking from "./Shaking";
 import Comparison from "./Comparison";
 import Review from "./Review";
+import Press from "./Press";
 
 export { 
     Navbar, 
@@ -12,4 +13,5 @@ export {
     Shaking, 
     Comparison,
     Review,
+    Press,
 }

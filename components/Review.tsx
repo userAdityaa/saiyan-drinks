@@ -66,7 +66,7 @@ const Review = () => {
   }, []);
 
   return (
-    <div className={`${background} h-[170vh] w-[100vw] flex ${oswald.className}`}>
+    <div className={`${background} h-[130vh] w-[100vw] flex ${oswald.className}`}>
       <svg
         className="w-[120%] absolute top-[203rem]"
         xmlns="http://www.w3.org/2000/svg"
