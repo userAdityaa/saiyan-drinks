@@ -29,11 +29,11 @@ const Review = () => {
   } else if (theme === 'lime') {
     background = 'bg-[#cdfe8c]';
     svgColor = '#cdfe8c';
-    whichCan = '/limeCan3.webp';
+    whichCan = '/limeCan2.webp';
   } else if (theme === 'dragonfruit') {
     background = 'bg-[#ffb5ef]';
     svgColor = '#ffb5ef';
-    whichCan = '/dragonCan3.webp';
+    whichCan = '/dragonCan2.webp';
   }
 
   useEffect(() => {

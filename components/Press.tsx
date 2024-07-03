@@ -26,7 +26,7 @@ const Press = () => {
     }
     
   return (
-    <div className={`${background} h-[80vh] ${oswald.className}  text-white`}>
+    <div className={`${background} h-[88vh] ${oswald.className}  text-white`}>
         <h1 className='font-bold text-[80px] tracking-tighter pt-[2rem] text-center'>IN THE PRESS</h1>
         <p className='text-white font-light text-[14px] text-center w-[25%] mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum.</p>
 
