@@ -1,4 +1,4 @@
-import { Comparison, Hero, Menu, Press, Questions, Review, Serving, Shaking } from "@/components";
+import { Comparison, Footer, Hero, Menu, Press, Questions, Review, Serving, Shaking } from "@/components";
 
 export default function Home() {
   return (
@@ -12,6 +12,8 @@ export default function Home() {
       <Press/>
       <Menu/>
       <Questions/>
+      <Footer/>
+
 
       
     </main>

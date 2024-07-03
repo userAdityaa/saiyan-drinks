@@ -7,6 +7,7 @@ import Review from "./Review";
 import Press from "./Press";
 import Menu from "./Menu";
 import Questions from "./Questions";
+import Footer from "./Footer";
 
 export { 
     Navbar, 
@@ -17,5 +18,6 @@ export {
     Review,
     Press,
     Menu, 
-    Questions
+    Questions, 
+    Footer
 }
