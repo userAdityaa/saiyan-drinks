@@ -2,7 +2,6 @@
 import React from 'react'
 import Image from 'next/image'
 import { Oswald } from 'next/font/google'
-import styled from 'styled-components';
 import { useGlobalContext } from '@/context/themeContext';
 
 
@@ -33,8 +32,6 @@ const Navbar = () => {
   return (
     
     <nav className={`fixed border rounded-full  w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white z-50`}>
-
-        
 
     
         <div className='flex items-center mr-[12vw]'>
