@@ -8,6 +8,8 @@ import Press from "./Press";
 import Menu from "./Menu";
 import Questions from "./Questions";
 import Footer from "./Footer";
+import HeroHome from "./HeroHome";
+import HydartionHome from "./HydartionHome";
 
 export { 
     Navbar, 
@@ -19,5 +21,7 @@ export {
     Press,
     Menu, 
     Questions, 
-    Footer
+    Footer, 
+    HeroHome,
+    HydartionHome
 }
