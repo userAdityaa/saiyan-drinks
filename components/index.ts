@@ -10,6 +10,10 @@ import Questions from "./Questions";
 import Footer from "./Footer";
 import HeroHome from "./HeroHome";
 import HydartionHome from "./HydartionHome";
+import TipsHome from "./TipsHome";
+import MenuHome from "./MenuHome";
+import ReviewHome from "./ReviewHome";
+import SubHome from "./SubHome";
 
 export { 
     Navbar, 
@@ -23,5 +27,9 @@ export {
     Questions, 
     Footer, 
     HeroHome,
-    HydartionHome
+    HydartionHome, 
+    TipsHome, 
+    MenuHome, 
+    ReviewHome, 
+    SubHome,
 }
