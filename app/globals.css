@@ -11,3 +11,7 @@ body {
 :root { 
   --bg-color: #f9f9f9;
 }
+
+/* .bg-custom-gradient {
+  background: linear-gradient(to top, #ef73d4 80%, #b7110b 20%);
+} */

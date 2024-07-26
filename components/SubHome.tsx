@@ -34,7 +34,7 @@ const SubHome = () => {
     </svg>
 
     <div className='bg-[#f0e14a] h-[160vh] flex flex-col items-center font-bold text-[#fc0c68]'>
-      <h1 className='text-[80px] text-center w-[50%] leading-tight tracking-tight '>Subscribe &amp; Save with Sayian Drinks</h1>
+      <h1 className='text-[80px] uppercase text-center w-[50%] leading-tight tracking-tight '>Subscribe &amp; Save with Sayian Drinks</h1>
       <p className='text-center w-[60%] mt-[2rem] text-[18px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aperiam sunt amet. Fugiat, a?Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 
       <div className='flex w-[70%] justify-between mt-[4rem]'>

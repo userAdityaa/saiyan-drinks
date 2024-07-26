@@ -1,6 +1,6 @@
 // import { Comparison, Footer, Hero, Menu, Press, Questions, Review, Serving, Shaking } from "@/components";
 
-import { HeroHome, HydartionHome, MenuHome, ReviewHome, SubHome, TipsHome } from "@/components";
+import { AmbMain, ExpMain, HeroHome, HydartionHome, MenuHome, ReviewHome, SubHome, TipsHome } from "@/components";
 
 
 export default function Home() {
@@ -23,6 +23,8 @@ export default function Home() {
       <MenuHome/>
       <ReviewHome/>
       <SubHome/>
+      <AmbMain/>
+      <ExpMain/>
 
 
       

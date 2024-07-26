@@ -14,6 +14,8 @@ import TipsHome from "./TipsHome";
 import MenuHome from "./MenuHome";
 import ReviewHome from "./ReviewHome";
 import SubHome from "./SubHome";
+import AmbMain from "./AmbMain";
+import ExpMain from "./ExpMain";
 
 export { 
     Navbar, 
@@ -32,4 +34,6 @@ export {
     MenuHome, 
     ReviewHome, 
     SubHome,
+    AmbMain, 
+    ExpMain
 }
