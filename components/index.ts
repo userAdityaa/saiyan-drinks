@@ -16,6 +16,7 @@ import ReviewHome from "./ReviewHome";
 import SubHome from "./SubHome";
 import AmbMain from "./AmbMain";
 import ExpMain from "./ExpMain";
+import FooterMain from "./FooterMain";
 
 export { 
     Navbar, 
@@ -35,5 +36,6 @@ export {
     ReviewHome, 
     SubHome,
     AmbMain, 
-    ExpMain
+    ExpMain, 
+    FooterMain
 }
