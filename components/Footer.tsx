@@ -20,6 +20,14 @@ const { theme, setTheme } = useGlobalContext();
     background = 'bg-[#F98A03]';
     svgColor = '#F98A03';
   }
+  else if(theme === 'lime') { 
+    background = 'bg-[#69ac0b]';
+    svgColor = '#69ac0b';
+  }
+  else if(theme === 'dragonfruit') { 
+    background = 'bg-[#ff21ce]'
+    svgColor = '#ff21ce'
+  }
 
   return (
     <div className={`${background} h-[70vh] relative`}>

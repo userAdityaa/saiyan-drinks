@@ -24,6 +24,12 @@ const Press = () => {
     if(theme == 'orange') {
         background = 'bg-[#F98A03]';
     }
+    else if(theme == 'lime') { 
+        background = 'bg-[#69ac0b]'
+    }
+    else if(theme == 'dragonfruit') { 
+        background = 'bg-[#ef19c0]'
+    }
     
   return (
     <div className={`${background} h-[88vh] ${oswald.className}  text-white`}>

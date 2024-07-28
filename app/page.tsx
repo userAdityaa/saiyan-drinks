@@ -7,15 +7,7 @@ export default function Home() {
   return (
     <main>
       
-      {/* <Hero/> */}
-      {/* <Serving/>
-      <Shaking/>
-      <Comparison/>
-      <Review/>
-      <Press/>
-      <Menu/>
-      <Questions/>
-      <Footer/> */}
+
 
       <HeroHome/>
       <HydartionHome/>

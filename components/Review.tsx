@@ -27,12 +27,12 @@ const Review = () => {
     svgColor = '#F98A03';
     whichCan = '/peachCan3.webp';
   } else if (theme === 'lime') {
-    background = 'bg-[#cdfe8c]';
-    svgColor = '#cdfe8c';
+    background = 'bg-[#69ac0b]';
+    svgColor = '#69ac0b';
     whichCan = '/limeCan2.webp';
   } else if (theme === 'dragonfruit') {
-    background = 'bg-[#ffb5ef]';
-    svgColor = '#ffb5ef';
+    background = 'bg-[#ef19c0]'
+    svgColor = '#ef19c0'
     whichCan = '/dragonCan2.webp';
   }
 

@@ -1,11 +1,12 @@
 'use client'
 import { NavbarProps } from '@/types/NavbarTypes'
-import React, { RefObject, useEffect, useRef, useState } from 'react'
+import React, { RefObject, use, useEffect, useRef, useState } from 'react'
 import Image from 'next/image';
 import { Oswald } from 'next/font/google';
 import gsap from 'gsap';
 import { useGlobalContext } from '@/context/themeContext';
 import { text } from 'stream/consumers';
+import { useRouter } from 'next/navigation';
 
 const oswald = Oswald({subsets: ['latin'], weight: ['400', '200', '300', '500']})
 
@@ -13,6 +14,7 @@ const oswald = Oswald({subsets: ['latin'], weight: ['400', '200', '300', '500']}
 const Hero = () => {
 
   const {theme, setTheme} = useGlobalContext();
+  const router = useRouter();
 
   const [activeButton, setActiveButton] = useState('BUY NOW');
   const [whichCan, setWhichCan] = useState('peachCan1');
@@ -21,6 +23,8 @@ const Hero = () => {
   const listCan = ['peach', 'lime', 'dragonfruit', 'lemon', 'straw', 'grape'];
 
   const containers = listCan.map(() => useRef<HTMLDivElement>(null));
+
+  
 
   let leftTheme, rightTheme, topicName, textColor, buttonColor, collectionCan;
 
@@ -48,6 +52,16 @@ const Hero = () => {
     collectionCan = ['dragonCan1', 'dragonCan2', 'dragonCan3', 'dragonCan4'];
   }
 
+  useEffect(() => {
+    if (theme === 'orange') {
+      setWhichCan('peachCan1');
+    } else if (theme === 'lime') {
+      setWhichCan('limeCan1');
+    } else if (theme === 'dragonfruit') {
+      setWhichCan('dragonCan1');
+    }
+  }, [theme]);
+
   const changeCan = (can: string) => {
     setWhichCan(can);
   };
@@ -55,14 +69,17 @@ const Hero = () => {
   const handleCanClick = (index: number) => {
     if(index == 0) { 
       setTheme('orange');
-      setWhichCan('peachCan1');
+      // setWhichCan('peachCan1');
+        router.push(`/Feature?search=orange`)
     }
     else if (index === 1) {
       setTheme('lime');
-      setWhichCan('limeCan1');
+      // setWhichCan('limeCan1');
+      router.push(`/Feature?search=lime`)
     } else if(index === 2) {
       setTheme('dragonfruit');
-      setWhichCan('dragonCan1');
+      router.push(`/Feature?search=dragonfruit`)
+      
     }  
   };
 

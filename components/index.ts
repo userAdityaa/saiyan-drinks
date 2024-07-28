@@ -16,6 +16,7 @@ import ReviewHome from "./ReviewHome";
 import SubHome from "./SubHome";
 import AmbMain from "./AmbMain";
 import ExpMain from "./ExpMain";
+import NavbarHome from "./NavBarHome";
 import FooterMain from "./FooterMain";
 
 export { 
@@ -29,6 +30,8 @@ export {
     Menu, 
     Questions, 
     Footer, 
+    
+    NavbarHome,
     HeroHome,
     HydartionHome, 
     TipsHome, 

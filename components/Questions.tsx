@@ -21,6 +21,14 @@ if (theme === 'orange') {
     background = 'bg-[#ffc98d]';
     textColor = 'text-[#ff8c00]';
     questionColor = 'bg-[#ff8c00]';
+} else if(theme === 'lime') {
+    background = 'bg-[#cdfe8c]'
+    textColor = 'text-[#69ac0b]'
+    questionColor = 'bg-[#69ac0b]'
+} else if(theme === 'dragonfruit') { 
+    background = 'bg-[#ffb5ef]'
+    textColor = 'text-[#ff21ce]'
+    questionColor = 'bg-[#ff21ce]';
 }
 
 const arrow = [0, 1, 2, 3];
