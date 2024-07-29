@@ -1,23 +1,40 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { RefObject, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Oswald } from 'next/font/google'
 import { useGlobalContext } from '@/context/themeContext';
 import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import { useRef } from 'react';
+import gsap from 'gsap';
 
 
 const oswald = Oswald({subsets: ['latin'], weight: ['400', '200', '300', '500']})
 
 const Navbar = () => {
     const {theme, setTheme} = useGlobalContext();
+    const router = useRouter();
+    const navRef = useRef(null)
 
     let mainthemeStyles;
     let svgFillColor;
     let svgBack;
 
     const searchParams = useSearchParams()
-    const search = searchParams.get('search')
+    const search = searchParams!.get('search')
     console.log(search)
+
+    const collectionCan = ['peachCan1', 'limeCan1', 'dragonCan1', 'lemonCan2', 'strawCan2', 'grapeCan1', 'berryCan1'];
+    const collectionName = ['Peach', 'lime', 'dragonfruit', 'lemon', 'strawberry', 'grape', 'blueberry'];
+    const collectionColor = ['bg-[#ff9014]', 'bg-[#76c015]', 'bg-[#ff0ea6]', 'bg-[#d6c200]', 'bg-[#f13e37]', 'bg-[#812181]', 'bg-[#1280e4]'];
+    // const canRef = useRef(null);
+    // for(int i = 0; i < collectionCan.length; i++) { 
+    //     canRefs[i].current.push(useRef(null));
+    // }
+    const canRef = useRef(null);
+    const containerCanRef = useRef<React.RefObject<any>[]>([]);
+    containerCanRef.current = collectionCan.map(() => useRef<any>(null));
+
 
     if(!search){ 
         mainthemeStyles = 'text-[#4eceff]'
@@ -39,28 +56,82 @@ const Navbar = () => {
         svgFillColor = '#ff21ce'
         svgBack = '/dragonfruit.svg'
     }
+    const [isVisible, setIsVisible] = useState(false);
+    const canRefs = useRef([]);
 
-    // useEffect(() => {
-    //     console.log("jdsfdklfjsdflkdkjfsdklf")
 
+    const handleMouseEnter = (index: number) => { 
+        gsap.to(canRefs.current[index], { scale: 1.05, duration: 0.5 });
+    };
+
+
+    const handleProductClick = () => {
+        if (navRef.current) {
+            const currentHeight = window.getComputedStyle(navRef.current).height;
+            
+            if (isVisible) {
+                // Hide the navbar
+                gsap.to(navRef.current, {
+                    duration: 0.5,
+                    height: '50px',
+                    visibility: 'hidden',
+                    ease: 'power2.inOut',
+                });
+                
+                // Hide canRef immediately
+                gsap.to(canRef.current, {
+                    duration: 0.5,
+                    opacity: 0,
+                    visibility: 'hidden',
+                    ease: 'power2.inOut',
+                });
+            } else {
+                // Show the navbar
+                gsap.fromTo(navRef.current,
+                    { height: '50px', visibility: 'hidden' },
+                    { height: '85vh', visibility: 'visible', duration: 0.5, ease: 'power2.inOut' }
+                );
+                
+                // Delay before showing canRef
+                setTimeout(() => {
+                    gsap.fromTo(canRef.current,
+                        { opacity: 0, visibility: 'hidden' },
+                        { opacity: 1, visibility: 'visible', duration: 0.5, ease: 'power2.inOut' }
+                    );
+                }, 500); // Delay in milliseconds (500ms in this example)
+            }
         
-    // }, [theme])
+            setIsVisible(!isVisible); // Toggle visibility state
+        }
+    };
+
 
 
   return (
-    
-    <nav className={`fixed border rounded-full  w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white z-50`}>
 
     
+    
+    <nav className={`fixed border rounded-full  w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white z-50`}>
+       <div className={`fixed rounded-3xl  w-[80vw] h-[85vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white -z-40 invisible flex items-center`} ref={navRef}>
+            <div className='flex flex-wrap items-center invisible px-[1rem]  h-[80%] absolute top-[3.5rem]' ref={canRef}>
+                {collectionCan.map((container, index) => { 
+                    return <div className={` w-[15rem] h-[17rem] mt-[2rem] ml-8 rounded-xl overflow-hidden ${collectionColor[index]}`} onMouseEnter={() => handleMouseEnter(index)} >
+                        <p className='text-center uppercase mt-[2rem] text-white text-[24px] font-semibold'>{collectionName[index]}</p>
+                        <Image src = {`/${collectionCan[index]}.webp`} alt='can' height={0} width={400} className='mt-[1rem]'></Image>
+                    </div>
+                })}
+            </div>
+            
+       </div>
         <div className='flex items-center mr-[12vw]'>
-            <div className='flex items-center mr-4 ml-[35px]'>
+            <div className='flex items-center mr-4 ml-[35px]' onClick={handleProductClick}>
                 <p className='mr-[0.5px]'>PRODUCTS</p>
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.9998 15L7.75684 10.757L9.17184 9.34302L11.9998 12.172L14.8278 9.34302L16.2428 10.757L11.9998 15Z" className={`${svgFillColor}`}/>
+                <svg width="34" height="34" viewBox="0 0 24 24" fill={`${svgFillColor}`} xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.9998 15L7.75684 10.757L9.17184 9.34302L11.9998 12.172L14.8278 9.34302L16.2428 10.757L11.9998 15Z"/>
                 </svg>
             </div>
             <p className='mr-4'>SHOP ALL</p>
-            <p>ALL PAGES</p>
+            <p onClick={() => router.push('/Contact')}>CONTACT</p>
         </div>  
 
 

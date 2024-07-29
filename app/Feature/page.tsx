@@ -8,7 +8,7 @@ import { useGlobalContext } from '@/context/themeContext'
 
 const Feature = () => {
   const searchParams = useSearchParams()
-  const search = searchParams.get('search')
+  const search = searchParams!.get('search')
   const {theme, setTheme} = useGlobalContext()
   if(search === 'peach') setTheme('orange')
   else setTheme(search!)
