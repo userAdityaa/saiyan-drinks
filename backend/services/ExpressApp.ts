@@ -1,13 +1,19 @@
 import express, { Application } from 'express'; 
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import path from 'path';
-import { MONGO_URI } from '../config';
+import { UserRoutes } from '../routes/user_routes';
+import cors from 'cors';
 
 
 export default async(app: Application) => { 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
+    app.use(cors({
+        origin: 'http://localhost:3001', 
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        allowedHeaders: 'Content-Type,Authorization',
+    }));
+    app.options('*', cors());
+    app.use('/user', UserRoutes);
     return app;
 }
 

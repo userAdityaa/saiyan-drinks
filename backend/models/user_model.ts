@@ -7,22 +7,22 @@ interface UserDoc extends Document {
     email: string, 
     password: string, 
     drinks: [any], 
-    orderCreated: boolean,
+    salt: string, 
 }
 
 const UserSchema = new Schema({ 
-    username: {type: String}, 
-    email: {type: String}, 
-    password: {type: String}, 
+    username: {type: String, require: true, unique: true}, 
+    email: {type: String, require: true, unique: true}, 
+    password: {type: String, require: true}, 
+    salt: {type: String, require: true},
     drinks: [{type: Schema.Types.ObjectId, ref: 'Drink'}],
-    orderCreated: {type: Boolean, default: false},
 }, 
     { 
         toJSON: { 
             transform(doc, ret) { 
                 delete ret._v, 
                 delete ret.createdAt,
-                delete ret.updatedAt 
+                delete ret.updatedAt
             }
         },
         timestamps: true,

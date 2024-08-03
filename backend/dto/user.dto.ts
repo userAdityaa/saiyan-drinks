@@ -5,3 +5,7 @@ export interface UserInput {
     drinks: [any],
     orderCreated: boolean,
 }
+
+export interface UserPayload { 
+    email: string,
+}

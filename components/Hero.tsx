@@ -1,17 +1,19 @@
 'use client'
-import { NavbarProps } from '@/types/NavbarTypes'
-import React, { RefObject, use, useEffect, useRef, useState } from 'react'
+
+import React, { ReactEventHandler, RefObject, use, useEffect, useRef, useState } from 'react'
 import Image from 'next/image';
 import { Oswald } from 'next/font/google';
 import gsap from 'gsap';
 import { useGlobalContext } from '@/context/themeContext';
-import { text } from 'stream/consumers';
 import { useRouter } from 'next/navigation';
+import { useGlobalNavbarContext } from '@/context/NavbarContext';
 
 const oswald = Oswald({subsets: ['latin'], weight: ['400', '200', '300', '500']})
 
   
 const Hero = () => {
+
+  const {counter, setCounter} = useGlobalNavbarContext();
 
   const {theme, setTheme} = useGlobalContext();
   const router = useRouter();
@@ -23,6 +25,8 @@ const Hero = () => {
   const listCan = ['peach', 'lime', 'dragonfruit', 'lemon', 'straw', 'grape'];
 
   const containers = listCan.map(() => useRef<HTMLDivElement>(null));
+
+  const [number, setNumber] = useState(0);
 
   
 
@@ -83,6 +87,12 @@ const Hero = () => {
     }  
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
+    let number = parseInt(e.target.value);
+    // console.log(e.target.value);
+    setNumber(number);
+  }
+
   const handleMouseEnter = (index: number) => {
     if (containers[index].current) {
       gsap.to(containers[index].current, { y: -10 });
@@ -94,6 +104,23 @@ const Hero = () => {
       gsap.to(containers[index].current, { y: 0 });
     }
   };
+
+  const handleCartClick = () => {
+    setCounter(counter + 1)
+  }
+
+  const handleClick = () => { 
+    if(theme === 'orange') {
+      localStorage.setItem('Peach', JSON.stringify({drink: 'Peach', quantity: number, price: number  * 75, image: '/peachCan1.webp'}));
+    }
+    else if(theme === 'lime') { 
+      localStorage.setItem('Lime', JSON.stringify({drink: 'Lime', quantity: number, price: number  * 55, image: '/limeCan1.webp'}));
+    }
+    else if(theme === 'dragonfruit') { 
+      localStorage.setItem('Dragonfruit', JSON.stringify({drink: 'Dragonfruit', quantity: number, price: number  * 65, image: '/dragonCan1.webp'}));
+    }
+    console.log(localStorage.getItem('Peach'));
+  }
 
   return (
     <div className={`h-[100vh] w-[100vw] flex justify-center ${oswald.className}`}>
@@ -140,9 +167,8 @@ const Hero = () => {
 
             {activeButton === 'BUY NOW' ? 
             <div className='flex items-center mt-[2rem] h-[40%] space-x-4'>
-              <input type="number" className='w-[20%] h-[100%] text-[22px] pl-[1rem]' />
-
-              <button className={`bg-white ${textColor} h-[100%] w-[70%] text-[22px]`}>ADD TO CART</button>
+              <input type="number" className='rounded-xl w-[20%] h-[100%] text-[22px] pl-[1rem]' value = {number} onChange={handleChange}/>
+              <button className={`bg-white ${textColor} rounded-xl h-[100%] w-[70%] text-[22px]`} onClick={handleClick}>ADD TO CART</button>
             </div>
                 : <div className='flex items-center mt-[2rem]'>
                     {listAvl.map((avl, index) => {
