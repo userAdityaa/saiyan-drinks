@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import App from './services/ExpressApp';
 import dbConnection from './services/Database';
 import cors from 'cors'

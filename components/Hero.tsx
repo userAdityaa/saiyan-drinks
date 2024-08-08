@@ -6,14 +6,12 @@ import { Oswald } from 'next/font/google';
 import gsap from 'gsap';
 import { useGlobalContext } from '@/context/themeContext';
 import { useRouter } from 'next/navigation';
-import { useGlobalNavbarContext } from '@/context/NavbarContext';
 
 const oswald = Oswald({subsets: ['latin'], weight: ['400', '200', '300', '500']})
 
   
 const Hero = () => {
 
-  const {counter, setCounter} = useGlobalNavbarContext();
 
   const {theme, setTheme} = useGlobalContext();
   const router = useRouter();
@@ -105,9 +103,6 @@ const Hero = () => {
     }
   };
 
-  const handleCartClick = () => {
-    setCounter(counter + 1)
-  }
 
   const handleClick = () => { 
     if(theme === 'orange') {

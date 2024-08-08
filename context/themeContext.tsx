@@ -13,7 +13,7 @@ const GlobalContext = createContext<themeContextType>({
 })
 
 
-export const GlobalContextProvider = ({children}) => { 
+export const GlobalContextProvider = ({children}: any) => { 
     const [theme, setTheme] = useState('orange');
     return (
         <GlobalContext.Provider value={{theme, setTheme}}>

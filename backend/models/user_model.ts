@@ -1,13 +1,12 @@
 import mongoose, { Schema, Document } from 'mongoose'
-import { Drink } from './drink_model'
 
 
 interface UserDoc extends Document { 
     username: string, 
     email: string, 
     password: string, 
-    drinks: [any], 
     salt: string, 
+    order: mongoose.Types.ObjectId[],
 }
 
 const UserSchema = new Schema({ 
@@ -15,7 +14,7 @@ const UserSchema = new Schema({
     email: {type: String, require: true, unique: true}, 
     password: {type: String, require: true}, 
     salt: {type: String, require: true},
-    drinks: [{type: Schema.Types.ObjectId, ref: 'Drink'}],
+    order: [{ type: Schema.Types.ObjectId, ref: 'Order' }]
 }, 
     { 
         toJSON: { 

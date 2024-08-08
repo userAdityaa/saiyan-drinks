@@ -6,6 +6,7 @@ export interface UserInput {
     orderCreated: boolean,
 }
 
+
 export interface UserPayload { 
     email: string,
 }

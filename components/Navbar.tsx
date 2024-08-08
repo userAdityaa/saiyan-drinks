@@ -1,5 +1,5 @@
 'use client'
-import React, { LegacyRef, RefObject, useEffect, useState } from 'react'
+import React, { Component, LegacyRef, RefObject, Suspense, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Oswald } from 'next/font/google'
 import { useGlobalContext } from '@/context/themeContext';
@@ -10,7 +10,7 @@ import gsap from 'gsap';
 
 const oswald = Oswald({subsets: ['latin'], weight: ['400', '200', '300', '500']})
 
-const Navbar = () => {
+const Container = () => {
     const {theme, setTheme} = useGlobalContext();
     // const {counter, setCounter} = useGlobalNavbarContext();
     const router = useRouter();
@@ -144,4 +144,11 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+
+export default function Navbar() { 
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <Container/>
+        </Suspense>
+    )
+}

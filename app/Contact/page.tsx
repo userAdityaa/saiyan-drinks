@@ -1,8 +1,8 @@
 import { HeroContact, Navbar } from '@/components'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 const Contact = () => {
-  return (
+  return (  
     <>
     <Navbar/>
     <HeroContact/>
