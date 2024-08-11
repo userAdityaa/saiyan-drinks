@@ -64,18 +64,19 @@ const MenuHome = () => {
     ];
   return (
     <div className='h-[120vh] w-[100vw]'>
-        <div className={`bg-[#FF9FC6] ${oswald.className} h-[235vh] w-[100vw] ${textColor} flex flex-col items-center`}>
+        <div className={`bg-[#FF9FC6] ${oswald.className} h-[235vh] w-[100vw] ${textColor} flex flex-col items-center max-pad:-mt-[60rem] relative max-air:-mt-[42rem] max-mini:-mt-[34rem]`}>
 
-            <h1 className={`text-center pt-[8rem] text-[80px] text-white font-bold tracking-tighter`}>EXPLORE FLAVORS</h1>
+            <h1 className={`text-center pt-[8rem] text-[80px] text-white font-bold tracking-tighter z-50 max-pad:absolute`}>EXPLORE FLAVORS</h1>
 
-            <p className="text-center w-[30%] mx-auto text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum.</p>
+            <p className="text-center w-[30%] mx-auto text-white z-50 max-pad:absolute max-pad:top-[17rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum.</p>
 
 
 
-            <div className="flex flex-wrap w-[90%] h-[90%] justify-between mt-[8rem]">
+            <div className="flex flex-wrap w-[90%] h-[90%] justify-between mt-[8rem] max-pad:mt-[26rem] max-pad:h-[65%]">
                 {listCan.map((can, index) => (
                     <div key={index}>
-                        <div className={`rounded-lg relative h-[41rem] flex flex-col items-center space-y-8 w-[26rem] ${listColor[index]}`}>
+                        <div className={`rounded-lg relative h-[41rem] flex flex-col items-center space-y-8 w-[26rem] ${listColor[index]} max-air:w-[23rem]
+                        max-air:h-[40rem] max-air:mb-[1.5rem] max-mini:h-[40rem] max-mini:w-[20rem]`}>
                             <p className="text-white font-bold text-[30px] tracking-tighter text-center pt-[2rem]">{can}</p>
                             <Image
                                 src={canContainer[index]}
@@ -113,10 +114,10 @@ const MenuHome = () => {
                                 ref={rightFruitRefs[index]}
                             />
                             <div className="flex justify-between w-[85%]">
-                                <button className="text-white font-bold text-[20px] bg-black bg-opacity-30 py-[1.0.9rem] px-[2.4rem] rounded-xl">
+                                <button className="text-white font-bold text-[20px] bg-black bg-opacity-30 py-[1.0.9rem] px-[2.4rem] rounded-xl max-air:h-[4.2rem] max-air:mr-[1rem]">
                                     BUY NOW
                                 </button>
-                                <button className={`bg-white py-[0.9rem] px-[1.5rem] rounded-xl text-[20px] font-bold ${buttonColor[index]}`}>
+                                <button className={`bg-white py-[0.9rem] px-[1.5rem] rounded-xl text-[20px] font-bold max-air:h-[4.2rem] flex items-center justify-center ${buttonColor[index]}`}>
                                     BUY IN STORES
                                 </button>
                             </div>
