@@ -64,7 +64,7 @@ const MenuHome = () => {
     ];
   return (
     <div className='h-[120vh] w-[100vw]'>
-        <div className={`bg-[#FF9FC6] ${oswald.className} h-[235vh] w-[100vw] ${textColor} flex flex-col items-center max-pad:-mt-[60rem] relative max-air:-mt-[42rem] max-mini:-mt-[34rem]`}>
+        <div className={`bg-[#FF9FC6] ${oswald.className} h-[235vh] w-[100vw] ${textColor} flex flex-col items-center max-pad:-mt-[60rem] relative max-air:-mt-[42rem] max-mini:-mt-[30rem] max-mini:h-[250vh] max-pad:h-[190vh] max-air:h-[220vh]`}>
 
             <h1 className={`text-center pt-[8rem] text-[80px] text-white font-bold tracking-tighter z-50 max-pad:absolute`}>EXPLORE FLAVORS</h1>
 
@@ -113,7 +113,7 @@ const MenuHome = () => {
                                 className="absolute top-[10rem] right-[8rem]"
                                 ref={rightFruitRefs[index]}
                             />
-                            <div className="flex justify-between w-[85%]">
+                            <div className="flex justify-between w-[85%] h-[4rem]">
                                 <button className="text-white font-bold text-[20px] bg-black bg-opacity-30 py-[1.0.9rem] px-[2.4rem] rounded-xl max-air:h-[4.2rem] max-air:mr-[1rem]">
                                     BUY NOW
                                 </button>
