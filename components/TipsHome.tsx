@@ -21,11 +21,11 @@ const TipsHome = () => {
      }, [])
     const container = ['quality', 'clean', '4g fiber', 'no toxins']
   return (
-    <div className={`h-[120vh] w-[100vw] bg-[#4eceff] ${oswald.className} relative`}>
+    <div className={`h-[120vh] w-[100vw] bg-[#4eceff] ${oswald.className} relative max-sm:h-[135vh]`}>
         <div className=' w-[95%] mx-auto h-[90%] max-pad:h-[10vh]'>
-            <Image src = '/canGive.webp' alt='can giving' height={0} width={720} className=' -rotate-[34deg] w-[50%] max-pad:w-[45%] max-pad:pt-[5rem] max-air:w-[45%] max-mini:pt-[7rem]' ref={rotateRef}></Image>
-            <h2 className='absolute right-[4rem] top-[1rem] text-white text-[68px] uppercase font-semibold tracking-tighter max-pad:text-[50px] max-air:text-[45px]'>All natural, <span className='text-[#fff500]'>always.</span></h2>
-            <div className='flex flex-wrap justify-between w-[40%] absolute top-[6.2rem] right-[3rem]'>
+            <Image src = '/canGive.webp' alt='can giving' height={0} width={720} className=' -rotate-[34deg] w-[50%] max-pad:w-[45%] max-pad:pt-[5rem] max-air:w-[45%] max-mini:pt-[7rem] max-sm:hidden' ref={rotateRef}></Image>
+            <h2 className='absolute right-[4rem] top-[1rem] text-white text-[68px] uppercase font-semibold tracking-tighter max-pad:text-[50px] max-air:text-[45px] max-sm:text-[50px] max-sm:leading-[3.5rem] max-sm:ml-[1rem] max-sm:mt-[2.5rem]'>All natural, <span className='text-[#fff500]'>always.</span></h2>
+            <div className='flex flex-wrap justify-between w-[40%] absolute top-[6.2rem] right-[3rem] max-sm:w-[80%] max-sm:mt-[6rem]'>
                 {container.map((item, index) => { 
                         return <div key={index} className=' w-[18rem] h-[10rem] mt-[5rem] max-pad:mt-[2rem] max-pad:w-[12rem] max-air:w-[10rem] max-pad:h-[10rem] max-air:h-[11rem] max-mini:h-[10rem] max-mini:w-[8rem]'>
 
@@ -37,7 +37,7 @@ const TipsHome = () => {
             </div>  
         </div>
         <svg
-            className='-mt-[32rem] max-pad:-mt-[22rem] max-air:-mt-[10rem] max-mini:-mt-[5rem]'
+            className='-mt-[32rem] max-pad:-mt-[22rem] max-air:-mt-[10rem] max-mini:-mt-[5rem] max-sm:mt-[1rem]'
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 375 86"

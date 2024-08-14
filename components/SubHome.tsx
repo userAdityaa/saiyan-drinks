@@ -34,30 +34,30 @@ const SubHome = () => {
     </svg>
 
     <div className='bg-[#f0e14a] h-[160vh] flex flex-col items-center font-bold text-[#fc0c68] max-mini:h-[135vh] max-air:h-[130vh] max-pad:h-[100vh]'>
-      <h1 className='text-[80px] uppercase text-center w-[50%] leading-tight tracking-tight max-mini:text-[70px] max-mini:mt-[4rem] max-mini:w-[90%] max-air:text-[70px] max-air:w-[90%] max-air:mt-[4rem]'>Subscribe &amp; Save with Sayian Drinks</h1>
-      <p className='text-center w-[60%] mt-[2rem] text-[18px] max-mini:text-[16px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aperiam sunt amet. Fugiat, a?Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+      <h1 className='text-[80px] uppercase text-center w-[50%] leading-tight tracking-tight max-mini:text-[70px] max-mini:mt-[4rem] max-mini:w-[90%] max-air:text-[70px] max-air:w-[90%] max-air:mt-[4rem] max-sm:text-[40px]'>Subscribe &amp; Save with Sayian Drinks</h1>
+      <p className='text-center w-[60%] mt-[2rem] text-[18px] max-mini:text-[16px] max-sm:w-[90%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aperiam sunt amet. Fugiat, a?Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 
-      <div className='flex w-[70%] justify-between mt-[4rem] max-mini:w-[95%] max-mini:ml-[2.5rem] max-air:w-[95%]'>
-        <div className='flex space-x-2 items-center'>
+      <div className='flex w-[70%] justify-between mt-[4rem] max-mini:w-[95%] max-mini:ml-[2.5rem] max-air:w-[95%] max-sm:w-[100%] max-sm:-ml-[0rem] max-sm:flex-wrap max-sm:items-center max-sm:justify-center'>
+        <div className='flex space-x-2 items-center max-sm:flex-col max-sm:mr-[2rem]'>
           <Image src = '/noBS.webp' alt = 'no bs' height={0} width={100}></Image>
           <p className='text-[22px]'>NO BS DISCOUNTS</p>
         </div>
-        <div className='flex space-x-2 items-center'>
+        <div className='flex space-x-2 items-center max-sm:flex-col'>
           <Image src = '/dis8.webp' alt = 'no bs' height={0} width={100}></Image>
           <p className='text-[22px]'>8% DISCOUNT</p>
         </div>
-        <div className='flex space-x-2 items-center'>
+        <div className='flex space-x-2 items-center max-sm:flex-col max-sm:mt-[2rem]'>
           <Image src = '/ship.webp' alt = 'no bs' height={0} width={100}></Image>
           <p className='text-[22px]'>2 DAY SHIPPING</p>
         </div>
       </div>
 
       <Image src='/lemonMain.webp' alt='lemon main' height={0} width={120} className='absolute top-[50rem] left-[15rem] max-mini:-left-[2rem]' ref={leftLimeRef}></Image>
-      <Image src='/lemonMain.webp' alt='lemon main' height={0} width={120} className='absolute top-[22rem] right-[8rem] rotate-[130deg]' ref={rightLimeRef}></Image>
+      <Image src='/lemonMain.webp' alt='lemon main' height={0} width={120} className='absolute top-[22rem] right-[8rem] rotate-[130deg] max-sm:top-[5rem] max-sm:w-[22%] max-sm:-right-[5%]' ref={rightLimeRef}></Image>
 
-      <Image src='/leafMain.webp' alt='lemon main' height={0} width={180} className='absolute top-[75rem] -left-[4rem] -rotate-90'></Image>
+      <Image src='/leafMain.webp' alt='lemon main' height={0} width={180} className='absolute top-[75rem] max-sm:w-[22%] -left-[4rem] -rotate-90'></Image>
       
-      <Image src='/leafMain.webp' alt='lemon main' height={0} width={180} className='absolute top-[45rem] -right-[4rem]'  ref={rightLeafRef}></Image>
+      <Image src='/leafMain.webp' alt='lemon main' height={0} width={180} className='absolute top-[45rem] max-sm:w-[22%] -right-[4rem]'  ref={rightLeafRef}></Image>
       
       <Image src='/limeFlav.webp' alt='lemon main' height={0} width={300} className='absolute top-[63rem] left-[18rem] max-mini:left-[6.4rem] max-air:left-[6rem] max-pad:left-[6rem]'></Image>
       <Image src='/lemonBagMain.webp' alt='lemon main' height={0} width={640} className='absolute top-[57rem] right-[0rem]  max-mini:w-[28rem] max-air:w-[28rem]'></Image>

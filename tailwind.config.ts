@@ -17,6 +17,7 @@ const config: Config = {
         'pad': '1030px',
         'mini': '770px',
         'air': '840px',
+        'ele': '400px',
       }
     },
   },

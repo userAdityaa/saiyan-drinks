@@ -64,15 +64,15 @@ const MenuHome = () => {
     ];
   return (
     <div className='h-[120vh] w-[100vw]'>
-        <div className={`bg-[#FF9FC6] ${oswald.className} h-[235vh] w-[100vw] ${textColor} flex flex-col items-center max-pad:-mt-[60rem] relative max-air:-mt-[42rem] max-mini:-mt-[30rem] max-mini:h-[250vh] max-pad:h-[190vh] max-air:h-[220vh]`}>
+        <div className={`bg-[#FF9FC6] ${oswald.className} h-[235vh] w-[100vw] ${textColor} flex flex-col items-center max-pad:-mt-[60rem] relative max-air:-mt-[42rem] max-mini:-mt-[30rem] max-mini:h-[250vh] max-pad:h-[190vh] max-air:h-[220vh] max-sm:h-[500vh]`}>
 
-            <h1 className={`text-center pt-[8rem] text-[80px] text-white font-bold tracking-tighter z-50 max-pad:absolute`}>EXPLORE FLAVORS</h1>
+            <h1 className={`text-center pt-[8rem] text-[80px] text-white font-bold tracking-tighter z-50 max-pad:absolute max-sm:text-[50px] max-sm:-mt-[3rem]`}>EXPLORE FLAVORS</h1>
 
-            <p className="text-center w-[30%] mx-auto text-white z-50 max-pad:absolute max-pad:top-[17rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum.</p>
+            <p className="text-center w-[30%] mx-auto text-white z-50 max-pad:absolute max-pad:top-[17rem] max-sm:w-[90%] max-sm:-mt-[7rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum.</p>
 
+            <button className='bg-white rounded-xl px-[1.5rem] py-[1rem] max-mini:hidden max-sm:block max-sm:absolute max-sm:top-[15rem] text-[#ff0ea6] font-bold text-[20px] max-pad:hidden max-air:hidden pad:hidden'>SHOP ALL</button>
 
-
-            <div className="flex flex-wrap w-[90%] h-[90%] justify-between mt-[8rem] max-pad:mt-[26rem] max-pad:h-[65%]">
+            <div className="flex flex-wrap w-[90%] h-[90%] justify-between mt-[8rem] max-pad:mt-[26rem] max-pad:h-[65%] max-sm:items-center max-sm:justify-center max-sm:mt-[22rem]">
                 {listCan.map((can, index) => (
                     <div key={index}>
                         <div className={`rounded-lg relative h-[41rem] flex flex-col items-center space-y-8 w-[26rem] ${listColor[index]} max-air:w-[23rem]
