@@ -5,7 +5,7 @@ import { AmbMain, ExpMain, FooterMain, HeroHome, HydartionHome, MenuHome, Review
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       
 
 
