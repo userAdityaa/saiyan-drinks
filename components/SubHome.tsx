@@ -59,8 +59,8 @@ const SubHome = () => {
       
       <Image src='/leafMain.webp' alt='lemon main' height={0} width={180} className='absolute top-[45rem] max-sm:w-[22%] -right-[4rem]'  ref={rightLeafRef}></Image>
       
-      <Image src='/limeFlav.webp' alt='lemon main' height={0} width={300} className='absolute top-[63rem] left-[18rem] max-mini:left-[6.4rem] max-air:left-[6rem] max-pad:left-[6rem]'></Image>
-      <Image src='/lemonBagMain.webp' alt='lemon main' height={0} width={640} className='absolute top-[57rem] right-[0rem]  max-mini:w-[28rem] max-air:w-[28rem]'></Image>
+      <Image src='/limeFlav.webp' alt='lemon main' height={0} width={300} className='absolute top-[63rem] left-[18rem] max-mini:left-[6.4rem] max-air:left-[6rem] max-pad:left-[6rem] max-sm:w-[10rem] max-sm:left-[0rem]'></Image>
+      <Image src='/lemonBagMain.webp' alt='lemon main' height={0} width={640} className='absolute top-[57rem] right-[0rem]  max-mini:w-[28rem] max-air:w-[28rem] max-sm:w-[18rem]'></Image>
     </div>
     </div>
   )
