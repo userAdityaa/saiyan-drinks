@@ -8,7 +8,6 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useRouter } from 'next/navigation';
 
-
 const oswald = Oswald({ subsets: ['latin'], weight: ['400', '200', '300', '500'] });
 
 const Menu = () => {
@@ -41,19 +40,17 @@ const Menu = () => {
         background = 'bg-[#ffc98d]';
         textColor = 'text-[#ff8c00]';
         svgColor = '#ffc98d';
-    }
-    else if (theme == 'lime') { 
-        background = 'bg-[#cdfe8c]'
-        textColor = 'text-[#69ac0b]'
-        svgColor = "#cdfe8c";
-    }
-    else if(theme === 'dragonfruit') {
-        background = 'bg-[#ffb5ef]'
-        textColor = 'text-[#ff21ce]'
+    } else if (theme === 'lime') {
+        background = 'bg-[#cdfe8c]';
+        textColor = 'text-[#69ac0b]';
+        svgColor = '#cdfe8c';
+    } else if (theme === 'dragonfruit') {
+        background = 'bg-[#ffb5ef]';
+        textColor = 'text-[#ff21ce]';
         svgColor = '#ffb5ef';
     }
 
-    const handleHover = (index: number) => { 
+    const handleHover = (index: number) => {
         gsap.to(containers[index].current, { rotate: -15, scale: 1.3 });
         gsap.to(leafRefs[index].current, { left: 45 });
         gsap.to(leftFruitRefs[index].current, { left: 300 });
@@ -76,7 +73,6 @@ const Menu = () => {
         'text-[#d5c201]'
     ];
 
-
     return (
         <div className={`${background} ${oswald.className} h-[235vh] w-[100vw] ${textColor} flex flex-col items-center`}>
             <svg className="absolute -mt-10 top-[320rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" height="500px" width="2000px">
@@ -87,50 +83,54 @@ const Menu = () => {
 
             <p className="text-center w-[30%] mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum.</p>
 
-
-
-            <div className="flex flex-wrap w-[90%] h-[90%] justify-between mt-[8rem]">
+            <div className="flex flex-wrap w-[90%] justify-between mt-[8rem]">
                 {listCan.map((can, index) => (
-                    <div key={index}>
-                        <div className={`rounded-lg relative h-[41rem] flex flex-col items-center space-y-8 w-[26rem] ${listColor[index]}`}>
-                            <p className="text-white font-bold text-[30px] tracking-tighter text-center pt-[2rem]">{can}</p>
-                            <Image
-                                src={canContainer[index]}
-                                alt="can"
-                                height={0}
-                                width={220}
-                                ref={containers[index]}
-                                onMouseEnter={() => handleHover(index)}
-                                onMouseLeave={() => handleHoverOut(index)}
-                                className="z-10"
+                    <div key={index} className="mb-8">
+                        <div className={`rounded-lg relative h-[41rem] flex flex-col items-center w-[26rem] ${listColor[index]}`}>
+                            <p className="text-white font-bold text-[30px] tracking-tighter text-center pt-[2rem] mb-4">{can}</p>
+                            <div className="flex-1 flex justify-center items-center relative">
+                                <Image
+                                    src={canContainer[index]}
+                                    alt="can"
+                                    height={300}
+                                    width={220}
+                                    ref={containers[index]}
+                                    onMouseEnter={() => handleHover(index)}
+                                    onMouseLeave={() => handleHoverOut(index)}
+                                    className="z-10"
                                     onClick={() => router.push(`/Feature/?search=${can.toLowerCase()}`)}
-                            />
-                            <Image
-                                src={leafContainer[index]}
-                                alt="leaf"
-                                height={0}
-                                width={120}
-                                className="absolute top-[23rem] left-[8rem]"
-                                ref={leafRefs[index]}
-                            />
-                            <Image
-                                src={leftFruit[index]}
-                                alt="left fruit"
-                                height={0}
-                                width={120}
-                                className="absolute top-[10rem] left-[8rem]"
-                                ref={leftFruitRefs[index]}
-                            />
-                            <Image
-                                src={rightFruit[index]}
-                                alt="right fruit"
-                                height={0}
-                                width={120}
-                                className="absolute top-[10rem] right-[8rem]"
-                                ref={rightFruitRefs[index]}
-                            />
-                            <div className="flex justify-between w-[85%]">
-                                <button className="text-white font-bold text-[20px] bg-black bg-opacity-30 py-[1.0.9rem] px-[2.4rem] rounded-xl">
+                                    style={{ objectFit: 'contain' }}
+                                />
+                                <Image
+                                    src={leafContainer[index]}
+                                    alt="leaf"
+                                    height={120}
+                                    width={120}
+                                    className="absolute top-[23rem] left-[8rem]"
+                                    ref={leafRefs[index]}
+                                    style={{ objectFit: 'contain' }}
+                                />
+                                <Image
+                                    src={leftFruit[index]}
+                                    alt="left fruit"
+                                    height={120}
+                                    width={120}
+                                    className="absolute top-[10rem] left-[8rem]"
+                                    ref={leftFruitRefs[index]}
+                                    style={{ objectFit: 'contain' }}
+                                />
+                                <Image
+                                    src={rightFruit[index]}
+                                    alt="right fruit"
+                                    height={120}
+                                    width={120}
+                                    className="absolute top-[10rem] right-[8rem]"
+                                    ref={rightFruitRefs[index]}
+                                    style={{ objectFit: 'contain' }}
+                                />
+                            </div>
+                            <div className="w-[85%] flex justify-between mt-auto mb-4">
+                                <button className="text-white font-bold text-[20px] bg-black bg-opacity-30 py-[0.9rem] px-[2.4rem] rounded-xl">
                                     BUY NOW
                                 </button>
                                 <button className={`bg-white py-[0.9rem] px-[1.5rem] rounded-xl text-[20px] font-bold ${buttonColor[index]}`}>
