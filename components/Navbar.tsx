@@ -10,7 +10,7 @@ const Container = () => {
     const [isVisible, setIsVisible] = useState(false);
     const { theme, setTheme } = useGlobalContext();
     const router = useRouter();
-    const navRef = useRef(null);
+    const navRef = useRef<HTMLDivElement>(null);
     const canRef = useRef(null);
     const searchParams = useSearchParams();
     const search = searchParams?.get('search');
@@ -20,33 +20,47 @@ const Container = () => {
     const handleProductClick = () => {
         if (navRef.current) {
             if (isVisible) {
-                // Hide the navbar
-                gsap.to(navRef.current, {
-                    duration: 0.5,
-                    height: '50px',
-                    visibility: 'hidden',
-                    ease: 'power2.inOut',
-                });
-                
-                // Hide canRef immediately
-                gsap.to(canRef.current, {
-                    duration: 0.5,
-                    opacity: 0,
-                    visibility: 'hidden',
-                    ease: 'power2.inOut',
-                });
+                // Hide canRef first (slide down and fade out)
+                gsap.fromTo(
+                    canRef.current,
+                    { y: '0', opacity: 1, visibility: 'visible', }, // Move to original position
+                    { y: '30px', opacity: 0, ease: 'power2.inOut' }, // Start below the navbar
+                );
+
+                // Delay navbar height reduction
+                setTimeout(() => {
+                    gsap.fromTo(
+                        navRef.current,
+                        { height: '95vh', visibility: 'visible' },
+                        {
+                            height: '0',
+                            duration: 0.5,
+                            ease: 'power2.inOut',
+                            onUpdate: function () {
+                                const progress = this.progress();
+                                if(!navRef.current) return;
+                                if (progress >= 0.7 && navRef.current.style.visibility !== 'hidden') {
+                                    navRef.current.style.visibility = 'hidden';
+                                }
+                            },
+                        }
+                    );
+                }, 500);
+
             } else {
                 // Show the navbar
-                gsap.fromTo(navRef.current,
-                    { height: '50px', visibility: 'hidden' },
-                    { height: '85vh', visibility: 'visible', duration: 0.5, ease: 'power2.inOut' }
+                gsap.fromTo(
+                    navRef.current,
+                    { height: '110px', visibility: 'hidden' },
+                    { height: '95vh', visibility: 'visible', duration: 0.5, ease: 'power2.inOut' }
                 );
-                
+
                 // Delay before showing canRef
                 setTimeout(() => {
-                    gsap.fromTo(canRef.current,
-                        { opacity: 0, visibility: 'hidden' },
-                        { opacity: 1, visibility: 'visible', duration: 0.5, ease: 'power2.inOut' }
+                    gsap.fromTo(
+                        canRef.current,
+                        { y: '85px', opacity: 0, visibility: 'hidden' }, // Start below the navbar
+                        { y: '0', opacity: 1, visibility: 'visible', duration: 0.5, ease: 'power2.inOut' } // Move to original position
                     );
                 }, 500);
             }
@@ -57,11 +71,11 @@ const Container = () => {
     return (
         <nav className={`fixed border rounded-full w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${activeTheme.mainthemeStyle} bg-white z-50 max-pad:h-[5vh] max-pad:w-[95vw] max-pad:left-[2.2vw] max-mini:h-[8vh] max-mini:w-[95vw]`}>
             <div className={`fixed rounded-3xl w-[80vw] h-[85vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${activeTheme.mainthemeStyle} bg-white -z-40 invisible flex items-center`} ref={navRef}>
-                <div className='flex flex-wrap items-center invisible px-[1rem] h-[80%] absolute top-[3.5rem]' ref={canRef}>
+                <div className='flex flex-wrap items-center invisible h-[80%] absolute top-[3.5rem]' ref={canRef}>
                     {navbarCan.map((container, index) => (
                         <div
                             key={index}
-                            className='w-[15rem] h-[17rem] mt-[2rem] ml-8 rounded-xl overflow-hidden'
+                            className='w-[15.5rem] h-[18.5rem] mt-[2rem] ml-8 rounded-xl overflow-hidden'
                             style={{ backgroundColor: navbarCanBackground[index] }}
                         >
                             <p className='text-center uppercase mt-[2rem] text-white text-[24px] font-semibold'>{navbarCanName[index]}</p>
