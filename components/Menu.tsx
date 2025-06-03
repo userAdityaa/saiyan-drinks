@@ -37,7 +37,7 @@ const Menu = () => {
         'bg-gradient-to-t from-[#d6c200] to-[#d5c201]'
     ];
 
-    if (theme === 'orange') {
+    if (theme === 'peach') {
         background = 'bg-[#ffc98d]';
         textColor = 'text-[#ff8c00]';
         svgColor = '#ffc98d';

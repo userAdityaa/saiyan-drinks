@@ -11,7 +11,7 @@ const HeroHome = () => {
         <p className='text-white w-[30%] text-center -mt-[60vh] max-mini:-mt-[80rem] max-pad:-mt-[94rem] max-air:-mt-[85rem] max-sm:w-[95%] max-sm:-mt-[70rem]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quisquam beatae sit doloribus atque</p>
         <button className='bg-[#fff500] text-[#4eceff] py-[0.8rem] px-[1.4rem] rounded-md font-bold text-[20px] mt-[1.5rem]'>SHOP NOW</button>
         <Image src='/mainCan.webp' alt='main can' width={2300} height={0} className='absolute top-[75%] left-[12%] max-pad:top-[40%] max-mini:w-[88%] max-mini:top-[55%] max-sm:w-[370px]'></Image>
-        <Image src='/redOrange.webp' alt='red orange' height={200} width={200} className='absolute top-[40%] left-[0%] max-pad:top-[10%] max-pad:-left-[5%] max-mini:w-[20%]'></Image>
+        <Image src='/redOrange.webp' alt='red peach' height={200} width={200} className='absolute top-[40%] left-[0%] max-pad:top-[10%] max-pad:-left-[5%] max-mini:w-[20%]'></Image>
         <Image src='/mainPeach.webp' alt='main peachs' height={200} width={150} className='max-mini:w-[15%] max-pad:top-[8%] max-pad:-right-[2.5%] absolute top-[20%] right-[1vw]'></Image>
         <Image src='/mainLime.webp' alt='main lime' height={200} width={150} className='max-mini:w-[18%] absolute top-[80%] right-[2%] max-pad:top-[40%]'></Image>
         <Image src='/leftLeaf.webp' alt='main leaf' height={200} width={250} className='max-mini:w-[22%] absolute top-[110%] -left-[3%] rotate-45 max-pad:top-[70%]'></Image>

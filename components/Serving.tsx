@@ -13,9 +13,9 @@ const Serving = () => {
 
     let background, textSvg, boardColor, textColor, borderColor, svgColor, content;
 
-    if(theme === 'orange') { 
+    if(theme === 'peach') { 
         background ='bg-[#ffc98d]';
-        textSvg= '/orangeTag.svg';
+        textSvg= '/peachTag.svg';
         boardColor ='bg-[#ff8c00]';
         textColor = 'text-[#ff8c00]';
         borderColor = 'border-[3px] border-[#ff8c00]';

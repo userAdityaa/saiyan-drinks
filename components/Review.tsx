@@ -22,7 +22,7 @@ const Review = () => {
 
   const personList = ['/personOne', '/personTwo', '/personThree', '/personFour', '/personFive'];
 
-  if (theme === 'orange') {
+  if (theme === 'peach') {
     background = 'bg-[#F98A03]';
     svgColor = '#F98A03';
     whichCan = '/peachCan3.webp';

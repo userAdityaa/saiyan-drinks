@@ -26,13 +26,9 @@ const Hero = () => {
 
   const [number, setNumber] = useState(0);
 
-  
-
   let leftTheme, rightTheme, topicName, textColor, buttonColor, collectionCan;
 
-
-
-  if (theme === 'orange') {
+  if (theme === 'peach') {
     leftTheme = 'bg-[#ff8c00]';
     rightTheme = 'bg-[#ffc98d]';
     topicName = 'PEACH';
@@ -55,7 +51,7 @@ const Hero = () => {
   }
 
   useEffect(() => {
-    if (theme === 'orange') {
+    if (theme === 'peach') {
       setWhichCan('peachCan1');
     } else if (theme === 'lime') {
       setWhichCan('limeCan1');
@@ -70,13 +66,11 @@ const Hero = () => {
 
   const handleCanClick = (index: number) => {
     if(index == 0) { 
-      setTheme('orange');
-      // setWhichCan('peachCan1');
-        router.push(`/Feature?search=orange`)
+      setTheme('peach');
+      router.push(`/Feature?search=peach`)
     }
     else if (index === 1) {
       setTheme('lime');
-      // setWhichCan('limeCan1');
       router.push(`/Feature?search=lime`)
     } else if(index === 2) {
       setTheme('dragonfruit');
@@ -87,7 +81,6 @@ const Hero = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
     let number = parseInt(e.target.value);
-    // console.log(e.target.value);
     setNumber(number);
   }
 
@@ -105,7 +98,7 @@ const Hero = () => {
 
 
   const handleClick = () => { 
-    if(theme === 'orange') {
+    if(theme === 'peach') {
       localStorage.setItem('Peach', JSON.stringify({drink: 'Peach', quantity: number, price: number  * 75, image: '/peachCan1.webp'}));
     }
     else if(theme === 'lime') { 
@@ -114,7 +107,6 @@ const Hero = () => {
     else if(theme === 'dragonfruit') { 
       localStorage.setItem('Dragonfruit', JSON.stringify({drink: 'Dragonfruit', quantity: number, price: number  * 65, image: '/dragonCan1.webp'}));
     }
-    console.log(localStorage.getItem('Peach'));
   }
 
   return (
@@ -136,13 +128,13 @@ const Hero = () => {
           <p className='w-[50%] text-center text-[18px] font-light text-white mt-[1rem]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
 
           <div className='flex items-center mt-[2.5rem] space-x-4 absolute top-[25rem]'>
-                        {listCan.map((can, index) => (
-                            <div className='flex-col space-y-3 items-center' key={index} onMouseLeave={() => handleMouseLeave(index)} onMouseEnter={() => handleMouseEnter(index)} ref={containers[index]} onClick={() => handleCanClick(index)}>
-                                <Image src={`/${can}.webp`} alt='cans' height={90} width={90}></Image>
-                                <div className='uppercase text-white text-center font-semibold'>{can}</div>
-                            </div>
-                        ))}
-                    </div>
+              {listCan.map((can, index) => (
+                  <div className='flex-col space-y-3 items-center' key={index} onMouseLeave={() => handleMouseLeave(index)} onMouseEnter={() => handleMouseEnter(index)} ref={containers[index]} onClick={() => handleCanClick(index)}>
+                      <Image src={`/${can}.webp`} alt='cans' height={90} width={90}></Image>
+                      <div className='uppercase text-white text-center font-semibold'>{can}</div>
+                  </div>
+              ))}
+          </div>
 
           <div className='border border-zinc-300 w-[28%] h-[18%] absolute top-[38rem] rounded-lg pt-[0.8rem] pl-[1.2rem]'>
             <div className='flex items-center text-white text-[20px] w-[95%]'>
@@ -171,10 +163,6 @@ const Hero = () => {
                     })}
                     </div>}   
           </div>
-
-                        
-
-          
         </div>
       </div>
 

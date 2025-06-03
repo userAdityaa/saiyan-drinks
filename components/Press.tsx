@@ -21,7 +21,7 @@ const Press = () => {
 
     let background;
 
-    if(theme == 'orange') {
+    if(theme == 'peach') {
         background = 'bg-[#F98A03]';
     }
     else if(theme == 'lime') { 

@@ -16,7 +16,7 @@ const { theme, setTheme } = useGlobalContext();
 
   let background, svgColor;
 
-  if(theme === 'orange') { 
+  if(theme === 'peach') { 
     background = 'bg-[#F98A03]';
     svgColor = '#F98A03';
   }

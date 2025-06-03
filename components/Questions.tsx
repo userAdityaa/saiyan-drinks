@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 let background, textColor, questionColor;
 
-if (theme === 'orange') {
+if (theme === 'peach') {
     background = 'bg-[#ffc98d]';
     textColor = 'text-[#ff8c00]';
     questionColor = 'bg-[#ff8c00]';

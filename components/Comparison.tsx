@@ -12,7 +12,7 @@ const Comparison = () => {
 
   let background, textColor, compBoard;
 
-  if(theme === 'orange') { 
+  if(theme === 'peach') { 
     background ='bg-[#ffc98d]';  
     textColor = 'text-[#ff8c00]'; 
     compBoard = '/peachComp.png';

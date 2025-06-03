@@ -8,13 +8,13 @@ interface themeContextType {
 }
 
 const GlobalContext = createContext<themeContextType>({ 
-    theme: 'orange', 
+    theme: 'peach', 
     setTheme: ():string => ''
 })
 
 
 export const GlobalContextProvider = ({children}: any) => { 
-    const [theme, setTheme] = useState('orange');
+    const [theme, setTheme] = useState('peach');
     return (
         <GlobalContext.Provider value={{theme, setTheme}}>
             {children}

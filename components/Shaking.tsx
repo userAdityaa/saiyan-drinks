@@ -52,7 +52,7 @@ const Shaking = () => {
             });
     })
 
-    if(theme === 'orange') { 
+    if(theme === 'peach') { 
         background ='bg-[#ffc98d]';   
         leftFruit = '/leftPeach.webp'; 
         rightFruit = '/rightPeach.png';

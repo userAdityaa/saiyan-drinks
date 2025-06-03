@@ -7,6 +7,7 @@ import { navbarCan, navbarCanName, navbarCanBackground, oswald } from '@/constan
 import gsap from 'gsap';
 
 const Container = () => {
+    const [isVisible, setIsVisible] = useState(false);
     const {theme, setTheme} = useGlobalContext();
     const router = useRouter();
     const navRef = useRef(null)
@@ -15,8 +16,8 @@ const Container = () => {
     let svgFillColor;
     let svgBack;
 
-    const searchParams = useSearchParams()
-    const search = searchParams!.get('search')
+    const searchParams = useSearchParams();
+    const search = searchParams?.get('search');
 
     const canRef = useRef(null);
 
@@ -26,10 +27,10 @@ const Container = () => {
         svgFillColor = '#4eceff'
         svgBack = '/blue.webp'
     }
-    else if(theme === 'orange') { 
+    else if(theme === 'peach') { 
         mainthemeStyles = 'text-[#ff8c00]' 
         svgFillColor = '#ff8c00'
-        svgBack = '/orange.svg'
+        svgBack = '/peach.svg'
     }
     else if(theme === 'lime') { 
         mainthemeStyles = 'text-[#69ac0b]'
@@ -41,12 +42,9 @@ const Container = () => {
         svgFillColor = '#ff21ce'
         svgBack = '/dragonfruit.svg'
     }
-    const [isVisible, setIsVisible] = useState(false);
 
     const handleProductClick = () => {
         if (navRef.current) {
-            const currentHeight = window.getComputedStyle(navRef.current).height;
-            
             if (isVisible) {
                 // Hide the navbar
                 gsap.to(navRef.current, {
@@ -78,13 +76,9 @@ const Container = () => {
                     );
                 }, 500); // Delay in milliseconds (500ms in this example)
             }
-        
             setIsVisible(!isVisible); // Toggle visibility state
         }
     };
-
-
-
 
 
   return (
