@@ -1,7 +1,10 @@
-import { mainthemeStyles, svgFillColor, oswald } from "./MainThemeConstants";
+import { mainthemeStyles, svgFillColor, oswald, navbarCan, navbarCanBackground, navbarCanName } from "./MainThemeConstants";
 
 export { 
     mainthemeStyles, 
     svgFillColor, 
-    oswald
+    oswald, 
+    navbarCan, 
+    navbarCanBackground, 
+    navbarCanName
 }

@@ -1,18 +1,13 @@
 'use client'
-import React, { Component, LegacyRef, RefObject, Suspense, useEffect, useState } from 'react'
-import Image from 'next/image'
-import { Oswald } from 'next/font/google'
+import React, { Suspense, useState, useRef } from 'react';
+import Image from 'next/image';
 import { useGlobalContext } from '@/context/themeContext';
-import { useSearchParams } from 'next/navigation'
-import { useRouter } from 'next/navigation';
-import { useRef } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { navbarCan, navbarCanName, navbarCanBackground, oswald } from '@/constants';
 import gsap from 'gsap';
-
-const oswald = Oswald({subsets: ['latin'], weight: ['400', '200', '300', '500']})
 
 const Container = () => {
     const {theme, setTheme} = useGlobalContext();
-    // const {counter, setCounter} = useGlobalNavbarContext();
     const router = useRouter();
     const navRef = useRef(null)
 
@@ -22,11 +17,6 @@ const Container = () => {
 
     const searchParams = useSearchParams()
     const search = searchParams!.get('search')
-    console.log(search)
-
-    const collectionCan = ['peachCan1', 'limeCan1', 'dragonCan1', 'lemonCan2', 'strawCan2', 'grapeCan1', 'berryCan1'];
-    const collectionName = ['Peach', 'lime', 'dragonfruit', 'lemon', 'strawberry', 'grape', 'blueberry'];
-    const collectionColor = ['bg-[#ff9014]', 'bg-[#76c015]', 'bg-[#ff0ea6]', 'bg-[#d6c200]', 'bg-[#f13e37]', 'bg-[#812181]', 'bg-[#1280e4]'];
 
     const canRef = useRef(null);
 
@@ -100,17 +90,17 @@ const Container = () => {
   return (
     
     <nav className={`fixed border rounded-full  w-[80vw] h-[9vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white z-50 max-pad:h-[5vh] max-pad:w-[95vw] max-pad:left-[2.2vw] max-mini:h-[8vh] max-mini:w-[95vw]`}>
-        {/* <button>{counter}</button> */}
+
        <div className={`fixed rounded-3xl  w-[80vw] h-[85vh] top-5 left-[10vw] flex items-center ${oswald.className} text-[20px] font-semibold ${mainthemeStyles} bg-white -z-40 invisible flex items-center`} ref={navRef}>
             <div className='flex flex-wrap items-center invisible px-[1rem]  h-[80%] absolute top-[3.5rem] ' ref={canRef}>
-                {collectionCan.map((container, index) => (
+                {navbarCan.map((container, index) => (
                 <div
                     key={index}
-                    className={`w-[15rem] h-[17rem] mt-[2rem] ml-8 rounded-xl overflow-hidden ${collectionColor[index]}`}
+                    className={`w-[15rem] h-[17rem] mt-[2rem] ml-8 rounded-xl overflow-hidden ${navbarCanBackground[index]}`}
                     >
-                    <p className='text-center uppercase mt-[2rem] text-white text-[24px] font-semibold'>{collectionName[index]}</p>
+                    <p className='text-center uppercase mt-[2rem] text-white text-[24px] font-semibold'>{navbarCanName[index]}</p>
                     <Image
-                    src={`/${collectionCan[index]}.webp`}
+                    src={`/${navbarCan[index]}.webp`}
                     alt='can'
                     height={0}
                     width={400}
@@ -119,8 +109,8 @@ const Container = () => {
                 </div>
                 ))}
             </div>
-            
        </div>
+
         <div className='flex items-center mr-[12vw] max-mini:hidden max-air:hidden'>
             <div className='flex items-center mr-4 ml-[35px]' onClick={handleProductClick}>
                 <p className='mr-[0.5px]'>PRODUCTS</p>
