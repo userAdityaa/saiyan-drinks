@@ -39,7 +39,6 @@ const ExpMain = () => {
     <div className={`relative bg-gradient-to-t from-[#ff7caa] via-[#ec576e] to-[#b7110b]  h-[320vh] flex items-center mt-[8rem] ${oswald.className} max-mini:-mt-[20rem] max-air:-mt-[20rem] max-pad:-mt-[45rem]`}>
         <Image src= '/redBannerMain.svg' alt='red banner' width={0} height={0} className='absolute -top-[20rem] w-[120vw] max-mini:-top-[10rem] max-air:-top-[10rem] max-pad:-top-[10rem] max-sm:-top-[5.5rem]'></Image>
         <div className='flex w-[95%] mx-auto h-[88%] max-mini:flex-col max-air:flex-col max-pad:flex-col'>
-            <Image src = '/drinkingMain.webp' alt='person drinking' height={0} width={450} className='h-[25%] mt-[1rem] ml-[4rem] max-mini:hidden max-air:hidden max-pad:hidden'></Image>
 
             <div className='flex flex-col text-white h-[30%] max-mini:-mt-[10rem] max-air:-mt-[10rem] max-pad:-mt-[10rem]'>
                 <p className='uppercase text-white text-[80px] tracking-tighter font-bold ml-[10rem] w-[80%] mt-[3rem] leading-tight  max-mini:w-[95%] max-mini:text-center max-mini:ml-0 max-air:ml-0 max-air:text-center max-air:w-[95%] max-pad:w-[95%] max-pad:text-center max-pad:ml-0 max-sm:text-[50px] max-sm:mx-auto'>It starts from the inside</p>
