@@ -114,7 +114,7 @@ const MenuHome = () => {
                                 ref={rightFruitRefs[index]}
                             />
                             <div className="flex justify-between w-[85%] h-[4rem]">
-                                <button className="text-white font-bold text-[20px] bg-black bg-opacity-30 py-[1.0.9rem] px-[2.4rem] rounded-xl max-air:h-[4.2rem] max-air:mr-[1rem]">
+                                <button className="text-white font-bold text-[20px] bg-black bg-opacity-30 py-[0.9rem] px-[2.4rem] rounded-xl max-air:h-[4.2rem] max-air:mr-[1rem]">
                                     BUY NOW
                                 </button>
                                 <button className={`bg-white py-[0.9rem] px-[1.5rem] rounded-xl text-[20px] font-bold max-air:h-[4.2rem] flex items-center justify-center ${buttonColor[index]}`}>
