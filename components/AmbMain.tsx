@@ -37,12 +37,12 @@ const AmbMain = () => {
         <div className='text-[90px] font-[900] uppercase tracking-tighter max-mini:text-[70px] max-mini:w-[90%] max-mini:ml-[4.5%] text-[#fc0c68] w-[70%] text-center mt-[8rem] ml-[16%] max-air:text-[70px] max-air:w-[90%] max-air:ml-[5%] max-pad:w-[95%] max-pad:ml-[4%] max-sm:w-[80%] max-sm:text-[45px] max-sm:mx-auto'>Saiyan Ambassadors</div>
         <div className='h-[49%] flex items-center justify-evenly mt-[5rem] max-mini:flex-wrap max-air:flex-wrap max-pad:-mt-[10rem] max-air:mt-[5rem]'>
 
-                <div className='border border-white w-[24%] h-[95%] rounded-2xl flex flex-col items-center bg-white -rotate-12 ml-[2rem] max-mini:w-[50%] max-mini:h-[40%] max-mini:ml-[10rem] max-air:ml-[10rem] max-air:h-[40%] max-air:w-[50%] max-pad:h-[40%] max-sm:w-[100rem] max-sm:h-[30rem]'>
+                <div className='border border-white w-[24%] h-[100%] rounded-2xl flex flex-col items-center bg-white -rotate-12 ml-[2rem] max-mini:w-[50%] max-mini:h-[40%] max-mini:ml-[10rem] max-air:ml-[10rem] max-air:h-[40%] max-air:w-[50%] max-pad:h-[40%] max-sm:w-[100rem] max-sm:h-[30rem]'>
                     <Image src='/vidOne.jpg' alt='video one' height={0} width={310} className='rounded-2xl mt-[1rem] max-air:h-[37rem] max-mini:h-[85%] max-pad:h-[84%] max-pad:w-[88%] max-sm:w-[90%]'></Image>
 
                   
 
-                    <div className='flex h-[5.5%] w-[90%] mt-[1rem] items-center'>
+                    <div className='flex h-[7%] w-[90%] mt-[1rem] items-center'>
 
                             <div className='flex items-center h-[90%]  w-[50%]'>
                                 <Image src={`${profileImage[0]}`} alt='profile' height={0} width={45} className='rounded-full box-content'></Image>
@@ -60,9 +60,7 @@ const AmbMain = () => {
                     </div>
                 </div>  
                
-                {/* <div className='border border-white w-[24%] h-[97%] rounded-2xl flex flex-col items-center bg-white rotate-6 ml-[6rem] mt-[8rem] max-mini:h-[40%] max-mini:w-[50%] max-mini:mr-[20rem] max-air:w-[50%]  max-air:mr-[20rem] max-air:h-[38%] max-pad:h-[40%] max-sm:h-[30rem] max-sm:w-[100rem] max-sm:ml-[5rem]'> */}
-                <div className='border border-white w-[24%] h-[100%] rounded-2xl flex flex-col items-center bg-white rotate-12 ml-[2rem] max-mini:w-[50%] max-mini:h-[40%] max-mini:ml-[10rem] max-air:ml-[10rem] max-air:h-[40%] max-air:w-[50%] max-pad:h-[40%] max-sm:w-[100rem] max-sm:h-[30rem] max-sm:ml-[2rem] max-sm:mr-[8rem] max-sm:mt-[3rem]'>
-                    {/* <Image src='/vidTwo.jpg' alt='video one' height={0} width={300} className='rounded-2xl mt-[1rem] max-mini:h-[32rem] max-pad:h-[84%] max-pad:w-[88%]'></Image> */}
+                <div className='border border-white w-[24%] h-[105%] rounded-2xl flex flex-col items-center bg-white rotate-12 ml-[2rem] max-mini:w-[50%] max-mini:h-[40%] max-mini:ml-[10rem] max-air:ml-[10rem] max-air:h-[40%] max-air:w-[50%] max-pad:h-[40%] max-sm:w-[100rem] max-sm:h-[30rem] max-sm:ml-[2rem] max-sm:mr-[8rem] max-sm:mt-[3rem]'>
                     <Image src='/vidTwo.jpg' alt='video one' height={0} width={310} className='rounded-2xl mt-[1rem] max-air:h-[37rem] max-mini:h-[85%] max-pad:h-[84%] max-pad:w-[88%] max-sm:w-[90%]'></Image>
 
 
@@ -83,7 +81,7 @@ const AmbMain = () => {
 
                     </div>
                 </div>  
-                <div className='border border-white w-[24%] h-[98%] rounded-2xl flex flex-col items-center bg-white -rotate-6 ml-[4rem] max-mini:w-[50%] max-mini:h-[40%] max-mini:mt-[4rem] max-mini:ml-[20rem] max-air:h-[38%] max-air:w-[50%] max-air:mt-[4rem] max-air:ml-[20rem] max-pad:h-[40%] max-sm:w-[100rem] max-sm:h-[30rem] max-sm:ml-[10rem] max-sm:mr-[0rem] max-sm:mt-[3rem]'>
+                <div className='border border-white w-[24%] h-[100%] rounded-2xl flex flex-col items-center bg-white -rotate-6 ml-[4rem] max-mini:w-[50%] max-mini:h-[40%] max-mini:mt-[4rem] max-mini:ml-[20rem] max-air:h-[38%] max-air:w-[50%] max-air:mt-[4rem] max-air:ml-[20rem] max-pad:h-[40%] max-sm:w-[100rem] max-sm:h-[30rem] max-sm:ml-[10rem] max-sm:mr-[0rem] max-sm:mt-[3rem]'>
                     <Image src='/vidThree.jpg' alt='video one' height={0} width={310} className='rounded-2xl mt-[1rem] max-mini:h-[32rem] max-pad:h-[84%] max-pad:w-[88%]  max-sm:w-[90%] max-sm:h-[85%]'></Image>
 
                     <div className='flex h-[5.5%] w-[90%] mt-[1rem] items-center'>

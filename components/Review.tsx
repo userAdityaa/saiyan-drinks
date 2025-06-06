@@ -68,7 +68,7 @@ const Review = () => {
   return (
     <div className={`${background} h-[150vh] w-[100vw] flex ${oswald.className}`}>
       <svg
-        className="w-[120%] absolute top-[203rem]"
+        className="w-[120%] absolute top-[190rem]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
       >
@@ -76,10 +76,10 @@ const Review = () => {
       </svg>
 
       <div className="w-[50%] flex flex-col p-10 h-[65%]" ref={leftSideRef}>
-        <Image src="/star.webp" alt="stars" height={0} width={200} className="mt-[2rem]" />
+        <Image src="/star.webp" alt="stars" height={0} width={250} className="mt-[2rem]" />
         <h1 className="font-bold text-[80px] text-white" >TESTIMONIALS</h1>
 
-        <p className="text-white">
+        <p className="text-white mt-[3rem]">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis iusto sequi temporibus ab accusantium officiis eveniet soluta velit? Accusantium saepe aut vero reiciendis quos perferendis, debitis quidem praesentium?
         </p>
 
